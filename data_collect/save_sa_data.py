@@ -176,7 +176,7 @@ def get_sa_month_data(s):
         delta = timedelta(days=n)
         date = (today - delta).strftime('%Y%m%d')
         #print(date)
-        if date=='20210503':
+        if date=='20210503' or date == '20210522':
             continue
         #print(date)
         get_sa_city_data(s, date)

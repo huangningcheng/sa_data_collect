@@ -102,4 +102,4 @@ def get_period_data(s,n=30):
 
 if __name__ == '__main__':
     s = login_pp('huangningcheng', 'Asdf.202103')
-    get_period_data(s,n=60)
+    get_period_data(s,n=6)

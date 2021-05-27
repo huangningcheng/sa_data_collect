@@ -229,6 +229,13 @@ def show_plot_pdu_ratio(start_time,end_time = 0):
     #citys.remove('宁德')
     #citys.remove('漳州')
     #citys.remove('南平')
+    '''
+    cityfil = {'福州','厦门','泉州'}
+    f = df['地市'] == None
+    for c in cityfil:
+        f = f | (df['地市'] == c)
+    print(df.loc[f])
+    '''
     for city in citys:
         #print(city)
         if end_time == 0:
@@ -273,7 +280,8 @@ def show_plot_sgw_flow(start_time,end_time = 0):
     df = pd.read_excel(fileurl)
     df['时间'] =pd.to_datetime(df['时间'].apply(str))
     #df['日期'] = df['日期'].apply(str)
-    upfs = ['XIMSAEGW2ABNK','XIMSAEGW2BBNK','XIMSAEGW2CBNK','XIMSAEGW2DBNK','XIMSAEGW2EBNK','XIMSAEGW2FBNK']
+    upfs = ['XIMSAEGW2ABNK','XIMSAEGW2BBNK','XIMSAEGW2CBNK','XIMSAEGW2DBNK',
+            'XIMSAEGW2EBNK','XIMSAEGW2FBNK','XIMSAEGW0EBNK','XIMSAEGW0GBNK']
 
     for upf in upfs:
         #print(city)
@@ -300,13 +308,15 @@ if __name__ == '__main__':
     plt.show()
     '''
     #show_plot_initregister_req('202105180800')
-    #how_plot_initregister_ratio('202105170800')
-    show_plot_mobileregister_req('202105200800')
-    #show_plot_pdu_ratio('202105180800')
-    #show_plot_sgw_flow('202105190000')
-    show_plot_upf_flow('202105201200')
+    #show_plot_initregister_ratio('202105250800')
+    #show_plot_mobileregister_req('202105250800')
+    show_plot_pdu_ratio('202105250800')
+    #show_plot_sgw_flow('202105250000')
+    #show_plot_upf_flow('202105251200')
     #show_plot_epsfb_e2e('20210303')
     #show_plot_epsfb_e2v('20210320')
-    #show_xm_5G_user('20210201',city='福州')
+    show_xm_5G_user('20210501',city='厦门')
     #show_city_5G_coverrate('20210413')
     #show_xm_5G_coverrate('20210317')
+
+
