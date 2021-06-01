@@ -97,9 +97,9 @@ def get_period_data(s,n=30):
         delta = timedelta(minutes=n)
         rt_time = (today - delta).strftime('%Y%m%d%H%M')
         get_sa_city_rt_data(s, rt_time)
-        get_upf_city_rt_data(s, rt_time)
-        get_sgw_city_rt_data(s, rt_time)
+        #get_upf_city_rt_data(s, rt_time)
+        #get_sgw_city_rt_data(s, rt_time)
 
 if __name__ == '__main__':
     s = login_pp('huangningcheng', 'Asdf.202103')
-    get_period_data(s,n=6)
+    get_period_data(s,n=1440*5)
